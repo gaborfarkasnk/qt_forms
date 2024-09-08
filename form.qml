@@ -4,40 +4,42 @@ import QtQuick.Controls.Material
 import QtQuick.Layouts
 
 ApplicationWindow{
-                width: 600
-                height: 600
+                width: 500
+                height: 300
                 title: "My form"
                 visible: true
                 Material.theme: Material.Dark
                 Material.accent: Material.LightBlue
 
-                ColumnLayout{}
-
-                Button{
-                    text: "button"
-                    x: 100
-                    y: 100
-                    }
-                Button{
-                    text: "button2"
-                    x: 200
-                    y: 100
-                    }
-                Text{
-                    text: "I am a label"
-                    
-                }
+                ColumnLayout{
+                anchors.fill: parent 
+                anchors.margins: 10
+                
                 TextField{
                     placeholderText: "Name"
-                    y: 50
+                    Layout.fillWidth: true
+                
                 }
                 TextField{
                     placeholderText: "Email"
-                    y: 150
+                    Layout.fillWidth: true
+                    
                 }   
                 TextField{
                     placeholderText: "Address"
-                    y: 250
+                    Layout.fillWidth: true
+                    
                 }   
+
+
+                Button{
+                    text: "save"
+                    Layout.alignment: Qt.AlignRight
+
+                    }
+                }
+
+                
+                    
                            
 }
