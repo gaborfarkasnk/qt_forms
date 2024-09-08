@@ -1,8 +1,7 @@
-from PySide6.QtWidgets import QWidget, QVBoxLayout, QLabel
+from PySide6.QtWidgets import QGroupBox, QVBoxLayout, QLabel
 
-class Proficiencies(QWidget):
+class Proficiencies(QGroupBox):
     def __init__(self):
         super().__init__()
         main_layout = QVBoxLayout(self)
-        label = QLabel("Player proficiencies section")
-        main_layout.addWidget(label)
+        self.setTitle("Proficiencies")

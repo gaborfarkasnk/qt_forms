@@ -1,5 +1,5 @@
 from PySide6.QtWidgets import (QWidget, QApplication, QLabel, QPushButton, QLineEdit, QHBoxLayout, QVBoxLayout
-            ,QSlider,                   
+            ,QSlider, QGroupBox                  
                                )
 import sys, json, os
 from char_sheet_lib.PlayerAttributes import PlayerAttributes
@@ -11,17 +11,21 @@ class CharSheet(QWidget):
     def __init__(self):
         super().__init__()
         self.setWindowTitle("D&D Character Sheet")
+        self.showMaximized()
 
         main_layout = QVBoxLayout(self)
        
-        main_layout.addWidget(player_attributes)
         player_details = PlayerDetails()
+        main_layout.addWidget(player_details)
+
+        h_layout = QHBoxLayout()
+        main_layout.addLayout(h_layout)
 
         player_attributes = PlayerAttributes()
-        main_layout.addWidget(player_attributes)
+        h_layout.addWidget(player_attributes)
 
         proficiencies = Proficiencies()
-        main_layout.addWidget(proficiencies)
+        h_layout.addWidget(proficiencies)
 
 
 if __name__ == "__main__":

@@ -1,8 +1,8 @@
-from PySide6.QtWidgets import QWidget, QLabel, QVBoxLayout
+from PySide6.QtWidgets import QGroupBox, QLabel, QVBoxLayout
 
-class PlayerAttributes(QWidget):
+class PlayerAttributes(QGroupBox):
     def __init__(self):
         super().__init__()
         main_layout = QVBoxLayout(self)
-        label = QLabel("Player attributes section")
-        main_layout.addWidget(label)
+        self.setTitle("Player Attirubutes")
+        self.setMaximumWidth(250)
